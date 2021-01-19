@@ -39,7 +39,7 @@ Things you may want to cover:
 | category_id     | integer    | null: false                    |
 | item_state_id   | integer    | null: false                    |
 | shipping_cost_id| integer    | null: false                    |
-| shipping_Area_id| integer    | null: false                    |
+| shipping_area_id| integer    | null: false                    |
 | shipping_time_id| integer    | null: false                    |
 | cost            | integer    | null: false                    |
 
@@ -50,7 +50,7 @@ Things you may want to cover:
 - belongs_to :category
 - belongs_to :item_state
 - belongs_to :shipping_cost
-- belongs_to :shipping_Area
+- belongs_to :shipping_area
 - belongs_to :shipping_time
 
 ## ordersテーブル
