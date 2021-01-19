@@ -34,7 +34,6 @@ Things you may want to cover:
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | user            | references | foreign_key: true              |
-| image           |            | ActiveStorage                  |
 | title           | string     | null: false                    |
 | item_description| text       | null: false                    |
 | category_id     | integer    | null: false                    |
@@ -76,7 +75,7 @@ Things you may want to cover:
 | city            | string     | null: false                    |
 | banchi          | string     | null: false                    |
 | building_name   | string     |                                |
-| phone_number    | integer    | null: false                    |
+| phone_number    | string     | null: false                    |
 
 ### Association
 - belongs_to    :order
