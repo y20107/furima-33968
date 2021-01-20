@@ -10,45 +10,6 @@ RSpec.describe User, type: :model do
       it '全てのカラムが存在すれば登録できる' do
         expect(@user).to be_valid
       end
-      it 'emailが一意であれば登録できる' do
-        @user.email = 'test@example'
-        expect(@user).to be_valid
-      end
-      it 'emailに@が含まれていれば登録できる' do
-        @user.email = 'test@example'
-        expect(@user).to be_valid
-      end
-      it 'passwordとpassword_confirmationが６文字以上であれば登録できる' do
-        @user.password = 'aaaaa1'
-        @user.password_confirmation = @user.password
-        expect(@user).to be_valid
-      end
-      it 'passwordとpassword_confirmationが半角英数字混合であれば登録できる' do
-        @user.password = 'aaaAA1'
-        @user.password_confirmation = @user.password
-        expect(@user).to be_valid
-      end
-      it 'passwordとpassword_confirmationの値が一致していれば登録できる' do
-        @user.password = 'aaaAA1'
-        @user.password_confirmation = @user.password
-        expect(@user).to be_valid
-      end
-      it 'last_nameが全角(ひらがな、カタカナ、漢字)であれば登録できる' do
-        @user.last_name = 'ぁんァヶ一龥'
-        expect(@user).to be_valid
-      end
-      it 'first_nameが全角(ひらがな、カタカナ、漢字)であれば登録できる' do
-        @user.first_name = 'ぁんァヶ一龥'
-        expect(@user).to be_valid
-      end
-      it 'last_name_kanaが全角カタカナであれば登録できる' do
-        @user.last_name_kana = 'ァヶ'
-        expect(@user).to be_valid
-      end
-      it 'first_name_kanaが全角カタカナであれば登録できる' do
-        @user.first_name_kana = 'ァヶ'
-        expect(@user).to be_valid
-      end
     end
     context '新規登録できない時' do
       it 'nicknameが空では登録できない' do
