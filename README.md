@@ -50,7 +50,7 @@ Things you may want to cover:
 - belongs_to :category
 - belongs_to :item_state
 - belongs_to :shipping_cost
-- belongs_to :shipping_area
+- belongs_to :prefecture
 - belongs_to :shipping_time
 
 ## ordersテーブル
