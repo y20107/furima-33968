@@ -10,6 +10,7 @@ class Item < ApplicationRecord
   belongs_to :user
 
   with_options presence: true do
+    validates :image
     validates :title
     validates :item_description
     validates :category_id
@@ -19,11 +20,12 @@ class Item < ApplicationRecord
     validates :shipping_time_id
     validates :cost,
               format: { 
-                with: /\A[\d]+\z/, message: 'Include both letters and numbers' 
+                with: /\A[\d]+\z/, message: 'Half-width number' 
               },
               numericality: {
                 greater_than_or_equal_to: 300,
-                less_than_or_equal_to: 9999999
+                less_than_or_equal_to: 9999999,
+                message: "Out of setting range"
               }
   end
 end
