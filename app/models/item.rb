@@ -16,7 +16,7 @@ class Item < ApplicationRecord
     validates :category_id
     validates :item_state_id
     validates :shipping_cost_id
-    validates :shipping_area_id
+    validates :prefecture_id
     validates :shipping_time_id
     validates :cost,
               numericality: { only_integer: true, message: 'Half-width number' }
