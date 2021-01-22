@@ -72,6 +72,16 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include 'Cost Half-width number'
       end
+      it '販売価格が半角英数混合では登録登録できない' do
+        @item.cost = 'azAZ09'
+        @item.valid?
+        expect(@item.errors.full_messages).to include 'Cost Half-width number'
+      end
+      it '販売価格が半角英語だけでは登録できない' do
+        @item.cost = 'azAZ'
+        @item.valid?
+        expect(@item.errors.full_messages).to include 'Cost Half-width number'
+      end
       it 'ユーザーが紐付いていなければ登録できない' do
         @item.user = nil
         @item.valid?
