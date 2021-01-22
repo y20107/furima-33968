@@ -19,13 +19,13 @@ class Item < ApplicationRecord
     validates :shipping_area_id
     validates :shipping_time_id
     validates :cost,
-              format: { 
-                with: /\A[\d]+\z/, message: 'Half-width number' 
-              },
-              numericality: {
-                greater_than_or_equal_to: 300,
-                less_than_or_equal_to: 9999999,
-                message: "Out of setting range"
-              }
+              numericality: { only_integer: true, message: "Half-width number" }
   end
+
+  validates :cost,
+            numericality: {
+              greater_than_or_equal_to: 300,
+              less_than_or_equal_to: 9999999,
+              message: 'Out of setting range'
+            }
 end
