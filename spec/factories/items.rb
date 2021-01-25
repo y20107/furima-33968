@@ -6,7 +6,7 @@ FactoryBot.define do
     category_id           { Faker::Number.within(range: 1..10) }
     item_state_id         { Faker::Number.within(range: 1..6) }
     shipping_cost_id      { Faker::Number.within(range: 1..6) }
-    shipping_area_id      { Faker::Number.within(range: 1..47) }
+    prefecture_id         { Faker::Number.within(range: 1..47) }
     shipping_time_id      { Faker::Number.within(range: 1..3) }
     cost                  { Faker::Number.between(from: 300, to: 9_999_999) }
     association :user

@@ -43,9 +43,9 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include "Shipping cost can't be blank"
       end
       it '発送元の地域について情報が空では登録できない' do
-        @item.shipping_area_id = ''
+        @item.prefecture_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include "Shipping area can't be blank"
+        expect(@item.errors.full_messages).to include "Prefecture can't be blank"
       end
       it '発送までの日数について情報が空では登録できない' do
         @item.shipping_time_id = ''

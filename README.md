@@ -39,7 +39,7 @@ Things you may want to cover:
 | category_id     | integer    | null: false                    |
 | item_state_id   | integer    | null: false                    |
 | shipping_cost_id| integer    | null: false                    |
-| shipping_area_id| integer    | null: false                    |
+| prefecture_id   | integer    | null: false                    |
 | shipping_time_id| integer    | null: false                    |
 | cost            | integer    | null: false                    |
 
