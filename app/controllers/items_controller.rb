@@ -28,10 +28,8 @@ class ItemsController < ApplicationController
   end
 
   def update
-    unless current_user == @item.user
-      redirect_to root_path
-      return
-    end
+    return redirect_to root_path unless current_user == @item.user
+
     if @item.update(item_params)
       redirect_to item_path(@item)
     else
