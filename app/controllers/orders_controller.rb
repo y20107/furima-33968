@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :create]
-  before_action :find_item, only: [:index, :create]
+  before_action :authenticate_user!
+  before_action :find_item
 
   def index
     @item_order = ItemOrder.new
