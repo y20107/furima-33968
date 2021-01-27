@@ -12,12 +12,12 @@ RSpec.describe Order, type: :model do
       end
     end
     context '商品購入できない時' do
-      it '紐付くユーザーが存在がないと購入できない' do
+      it '紐付くユーザーが存在しないと購入できない' do
         @order.user = nil
         @order.valid?
         expect(@order.errors.full_messages).to include 'User must exist'
       end
-      it '紐付く商品が存在がないと購入できない' do
+      it '紐付く商品が存在しないと購入できない' do
         @order.item = nil
         @order.valid?
         expect(@order.errors.full_messages).to include 'Item must exist'
