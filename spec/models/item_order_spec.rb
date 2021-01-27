@@ -46,6 +46,16 @@ RSpec.describe ItemOrder, type: :model do
         @order.valid?
         expect(@order.errors.full_messages).to include "Phone number can't be blank"
       end
+      it '紐付くユーザーが存在しないと購入できない' do
+        @order.user_id = ''
+        @order.valid?
+        expect(@order.errors.full_messages).to include "User can't be blank"
+      end
+      it '紐付く商品が存在しないと購入できない' do
+        @order.item_id = ''
+        @order.valid?
+        expect(@order.errors.full_messages).to include "Item can't be blank"
+      end
       it '郵便番号はハイフンが含まれていないと購入できない' do
         @order.postal_code = '1110000'
         @order.valid?
@@ -63,6 +73,11 @@ RSpec.describe ItemOrder, type: :model do
       end
       it '電話番号に全角が含まれていると購入できない' do
         @order.phone_number = '０９０１２３４５６７８'
+        @order.valid?
+        expect(@order.errors.full_messages).to include 'Phone number Input only number'
+      end
+      it '電話番号が英数混合では購入できない' do
+        @order.phone_number = '090azAZ'
         @order.valid?
         expect(@order.errors.full_messages).to include 'Phone number Input only number'
       end

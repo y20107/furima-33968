@@ -10,6 +10,8 @@ class ItemOrder
     validates :city
     validates :banchi
     validates :phone_number, length: { maximum: 11, message: 'is out of setting range' }
+    validates :user_id
+    validates :item_id
   end
   validates :phone_number, format: { with: /\A[0-9]+\z/, message: 'Input only number' }
 
